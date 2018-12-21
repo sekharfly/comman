@@ -17,6 +17,18 @@ public class Advertiser {
 	private String advertiserContactName; 
 	
 	private String advertiserCreditLimit;
+	
+	public Advertiser(long id, String advertiserName, String advertiserContactName, String advertiserCreditLimit) {
+		super();
+		this.id = id;
+		this.advertiserName = advertiserName;
+		this.advertiserContactName = advertiserContactName;
+		this.advertiserCreditLimit = advertiserCreditLimit;
+	}
+
+	public Advertiser() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public long getId() {
 		return id;
