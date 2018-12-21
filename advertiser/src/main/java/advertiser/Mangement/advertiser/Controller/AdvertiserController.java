@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
 import com.wordnik.swagger.annotations.Api;
 
 import advertiser.Mangement.advertiser.model.Advertiser;
@@ -24,6 +25,9 @@ public class AdvertiserController {
 
 	@Autowired
 	public AdvertiserRepo repo;
+	
+	@Autowired
+	Gson gson;
 
 	@RequestMapping(value = "/newAdvertiser", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Advertiser newAdvertiser(@RequestBody Advertiser json) {
@@ -58,12 +62,12 @@ public class AdvertiserController {
 	}
 
 	@RequestMapping(value = "/getAdvertiser/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Advertiser> getAdvertiser(@PathVariable("id") long id) {
+	public ResponseEntity<String> getAdvertiser(@PathVariable("id") long id) {
 		Optional<Advertiser> findById = repo.findById(id);
 		if (findById.isPresent()) {
-			return new ResponseEntity<Advertiser>(findById.get(), HttpStatus.OK);
+			return new ResponseEntity<String>(gson.toJson(findById.get()), HttpStatus.OK);
 		}
-		return new ResponseEntity<Advertiser>(HttpStatus.NOT_FOUND);
+		return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
 	}
 
 	@RequestMapping(value = "/enoughCreditAdvertiser/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
