@@ -2,11 +2,9 @@ package advertiser.Mangement.advertiser;
 
 import static org.junit.Assert.assertEquals;
 
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.util.Date;
 import java.util.Optional;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -15,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
@@ -25,8 +21,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
 
@@ -52,7 +46,7 @@ public class AdvertiserApplicationTests {
 
 	@Test
 	public void findById() throws Exception {
-		Advertiser advertiser = new Advertiser(1l, "vinay", "vinay r", "100");
+		Advertiser advertiser = new Advertiser(1l, "vinay", "vinay r", "100",new Date());
 		Optional<Advertiser> of = Optional.of(advertiser);
 		Mockito.<Optional<Advertiser>>when(studentService.findById(Mockito.any())).thenReturn(of);
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/advertiser/getAdvertiser/1")
@@ -94,7 +88,7 @@ public class AdvertiserApplicationTests {
 		
 	@Test
 	public void newAdvertiser() throws Exception {
-		Advertiser advertiser = new Advertiser(1l, "vinay", "vinay r", "100");
+		Advertiser advertiser = new Advertiser(1l, "vinay", "vinay r", "100",new Date());
 		// studentService.addCourse to respond back with mockCourse
 		Mockito.when(studentService.save(Mockito.any())).thenReturn(advertiser);
 		// Send course as body to /students/Student1/courses
