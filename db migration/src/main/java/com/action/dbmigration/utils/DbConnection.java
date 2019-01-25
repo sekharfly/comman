@@ -5,18 +5,17 @@ import java.sql.DriverManager;
 
 public class DbConnection {
 
-	public Connection dbConnection() {
+	public Connection dbConnection(String url, String name, String password) {
 		Connection con = null;
 		try {
-			Class.forName("org.h2.Driver");
-			con = DriverManager.getConnection(
-					"jdbc:h2:~/file/advertiserss;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE", "sa",
-					"");
-			System.out.println(con);
+			// "jdbc:mysql://localhost:3306/dbmig", "root", "SekharFly"
+			con = DriverManager.getConnection(url, name, password);
 			return con;
+
 		} catch (Exception e) {
 			System.out.println(e);
+			return con;
 		}
-		return con;
+
 	}
 }

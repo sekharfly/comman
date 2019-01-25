@@ -5,13 +5,15 @@ import java.sql.DriverManager;
 
 public class MySqlDb {
 
-	public Connection mysql() {
+	public Connection mysql(String url, String name, String password) {
 		Connection con = null;
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbmig", "root", "SekharFly");
-
+			Class.forName("org.h2.Driver");
+			con = DriverManager.getConnection(
+					"jdbc:h2:~/file/advertiserss;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE", "sa",
+					"");
+			System.out.println(con);
 			return con;
-
 		} catch (Exception e) {
 			System.out.println(e);
 		}

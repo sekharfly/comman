@@ -188,4 +188,12 @@ public class AdvertiserController {
 			return new ResponseEntity<String>(jsonObject.toString(), HttpStatus.OK);
 		}
 	}
+
+	@RequestMapping(value = "/exportCSV", method = RequestMethod.GET)
+	public String exportCSV() {
+		Iterable<Advertiser> findAll = repo.findAll();
+		return null;
+
+	}
+
 }
