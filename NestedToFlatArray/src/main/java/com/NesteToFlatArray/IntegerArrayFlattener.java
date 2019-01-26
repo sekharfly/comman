@@ -1,7 +1,6 @@
-package com.conorgriffin.flattener;
+package com.NesteToFlatArray;
 
 import java.util.ArrayList;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,7 +9,6 @@ import java.util.List;
  *
  */
 public class IntegerArrayFlattener {
-
 	public static Integer[] flatten(Object[] inputArray) throws IllegalArgumentException {
 
 		if (inputArray == null)
@@ -37,5 +35,4 @@ public class IntegerArrayFlattener {
 
 		}
 	}
-
 }

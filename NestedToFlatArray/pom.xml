@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Counting</groupId>
-  <artifactId>LogReading</artifactId>
+  <groupId>com</groupId>
+  <artifactId>NesteToFlatArray</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>LogReading</name>
+  <name>NesteToFlatArray</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -15,10 +15,10 @@
   </properties>
 
   <dependencies>
-    <dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.1</version>
-    </dependency>
+            <version>4.11</version>
+        </dependency>
   </dependencies>
 </project>

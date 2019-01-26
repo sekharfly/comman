@@ -1,4 +1,4 @@
-package com.conorgriffin.flattener;
+package com.NesteToFlatArray;
 
 import org.junit.Assert;
 import org.junit.Test;

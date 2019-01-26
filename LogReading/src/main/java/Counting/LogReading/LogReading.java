@@ -24,9 +24,7 @@ public class LogReading
 
 				if (strLine.contains("ERROR")) {
 					errors.add(strLine);
-
 				}
-
 			}
 
 			fstream.close();
