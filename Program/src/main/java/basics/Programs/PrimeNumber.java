@@ -6,7 +6,7 @@ public class PrimeNumber {
 
 		int temp = 0;
 		boolean isPrime = true;
-		int num = 19;
+		int num = 377;
 
 		for (int i = 2; i < num / 2; i++) {
 			temp = num % i;

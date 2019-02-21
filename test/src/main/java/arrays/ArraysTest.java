@@ -1,5 +1,8 @@
 package arrays;
 
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
 public class ArraysTest {
 	static int r = 10;
 	public static void main(String[] args) {
@@ -39,7 +42,28 @@ public class ArraysTest {
 			
 			total = total + x;
 		}
-		System.out.println("sum : "+total);
+		//System.out.println("sum : "+total);
+		
+		
+		ArrayList<String> arrayList = new ArrayList<String>();
+		arrayList.add("sekhar");
+		arrayList.add("aekhar2");
+		arrayList.add("zekhar3");
+		
+		
+		arrayList.stream().sorted((o1,o2)->o2.compareTo(o1)).forEach(System.out::println);
+		
+		arrayList.stream().sorted((a1,a2)->a2.compareTo(a1)).forEach(System.out::println);
+		
+		String fast = "someone,extremely,diligent,orskillful";
+		
+		StringTokenizer stringTokenizer = new StringTokenizer(fast);
+		while (stringTokenizer.hasMoreTokens()) {
+			stringTokenizer.nextToken(",");
+			System.out.println(stringTokenizer.nextElement());
+			     
+		}
+		
 	}
 
 }
