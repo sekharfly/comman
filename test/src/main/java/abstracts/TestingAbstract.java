@@ -1,6 +1,6 @@
 package abstracts;
 
- abstract class Main {
+abstract class Main {
 
 	abstract void m1();
 
@@ -14,8 +14,10 @@ class subAbst extends Main {
 	@Override
 	void m1() {
 		// TODO Auto-generated method stub
-		
+
 	}
+
+
 }
 
 public class TestingAbstract {
@@ -23,7 +25,5 @@ public class TestingAbstract {
 
 		subAbst subAbst = new subAbst();
 		subAbst.m2();
-		
-
 	}
 }
