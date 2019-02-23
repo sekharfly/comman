@@ -13,9 +13,11 @@ public class KafkaController {
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
 
+	String topic = "test";
+
 	@RequestMapping
-	public String produce(@RequestBody String str) {
-		kafkaTemplate.send("test", str);
+	public String produce(@RequestBody String body) {
+		kafkaTemplate.send(topic, body);
 		return "sent successfully";
 	}
 }
