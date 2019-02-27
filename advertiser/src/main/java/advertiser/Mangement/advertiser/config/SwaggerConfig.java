@@ -15,10 +15,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
 	@Bean
 	public Docket produceApi() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
-				.apis(RequestHandlerSelectors.basePackage("advertiser.Mangement.advertiser.Controller")).paths(paths()).build();
+				.apis(RequestHandlerSelectors.basePackage("advertiser.Mangement.advertiser.Controller")).paths(paths())
+				.build();
 	}
 
 	// Describe your apis
